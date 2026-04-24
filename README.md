@@ -1,10 +1,6 @@
-## 🕵️ SPY-E PERSONA-SCRAPER v1.0
+## 🕵️ SEARCHER OSINT SCRAPER
 
-![Platform](https://img.shields.io/badge/Platform-Termux%20%7C%20Linux%20%7C%20Windows-red?style=for-the-badge&logo=android)
-![Python](https://img.shields.io/badge/Python-3.x-blue?style=for-the-badge&logo=python)
-![Unit](https://img.shields.io/badge/Unit-123Tool%20Intelligence-7000ff?style=for-the-badge)
-
-**Persona-Scraper** adalah alat investigasi **OSINT (Open Source Intelligence)** tingkat lanjut yang dirancang untuk melacak jejak digital target berdasarkan username. Alat ini bekerja secara asinkron untuk menyisir ratusan platform dan basis data kebocoran dalam hitungan detik.
+Alat investigasi **OSINT (Open Source Intelligence)** tingkat lanjut yang dirancang untuk melacak jejak digital target berdasarkan username. Alat ini bekerja secara asinkron untuk menyisir ratusan platform dan basis data kebocoran dalam hitungan detik.
 
 ---
 
@@ -19,10 +15,40 @@
 
 ## 🛠️ Instalasi & Persiapan
 
-### 1. Prasyarat
+## 1. Prasyarat
 Pastikan Anda sudah menginstal **Python 3.x** di perangkat Anda (PC/Laptop atau Termux).
 
-### 2. Clone Repositori
+## 2. Install Dependensi
+​Jalankan perintah ini untuk menginstal semua library pendukung :
+```
+pip install aiohttp colorama prettytable pillow
+```
+## 3. Clone Repositori
 ```bash
-git clone [https://github.com/username-kamu/persona-scraper.git](https://github.com/username-kamu/persona-scraper.git)
-cd persona-scraper
+git clone [https://github.com/123tool/Seacher-Osint.git](https://github.com/123tool/Seacher-Osint.git)
+cd Seacher-Osint
+```
+
+## 4. Panduan Penggunaan
+​Gunakan perintah dasar diikuti dengan username target yang ingin diinvestigasi :
+```
+python main.py [username_target]
+```
+Contoh :
+```
+python main.py agus_setiadi
+```
+## Struktur Output
+​Setiap kali investigasi berhasil menangkap gambar profil target, file akan disimpan dengan struktur :
+```
+​intel_reports/[username]_avatar.jpg -> Foto profil yang diambil.
+​Terminal Output -> Tabel lengkap berisi URL aktif dan status keamanan data.
+```
+## Logika Operasional :
+
+​**Script ini menggunakan logika Status Code
+Analysis. Jika target ditemukan (HTTP 200), sistem akan langsung mengunci URL tersebut sebagai bukti fisik. Jika target pernah masuk dalam database kebocoran, label VULNERABLE akan muncul sebagai peringatan merah.**
+
+​⚠️ Disclaimer
+
+​**Alat ini dibuat oleh 123TOOL hanya untuk tujuan Edukasi, Forensik Digital, dan Keamanan Jaringan. Penggunaan alat ini untuk tindakan penguntitan (stalking) atau ilegal adalah tanggung jawab pengguna sepenuhnya.**
